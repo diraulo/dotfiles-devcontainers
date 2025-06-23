@@ -1,4 +1,9 @@
 [tools]
 bat = "latest"
+lsd = "latest"
+fzf = "latest"
+fd = "latest"
 chezmoi = "latest"
+ripgrep = "latest"
+usage = "latest" #  required for mise completion
 

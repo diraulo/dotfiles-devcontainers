@@ -12,3 +12,13 @@ fi;
 # disable zsh bundled function mtools command mcd
 # which causes a conflict.
 compdef -d mcd
+
+# enable fzf completion if installed
+if command -v fzf > /dev/null ; then
+  source <(fzf --zsh)
+fi
+
+# enable mise completion if installed
+if command -v mise > /dev/null ; then
+  source <(mise completion zsh)
+fi
