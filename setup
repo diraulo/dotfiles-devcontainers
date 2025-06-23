@@ -2,8 +2,14 @@
 
 set -euo pipefail
 
+# use zsh as default shell
+if command -v zsh >/dev/null; then
+  sudo chsh -s $(command -v zsh) $USER
+fi
+
+# install chezmoi and pull dotfiles from GitHub
 if ! command -v chezmoi >/dev/null; then
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:diraulo/dotfiles-devcontainers.git
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:diraulo/dotfiles-devcontainers.git
 fi
 
 exit 0
