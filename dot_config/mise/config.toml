@@ -8,3 +8,4 @@ ripgrep = "latest"
 usage = "latest" #  required for mise completion
 neovim = "latest"
 node = "latest"
+starship = "latest"
