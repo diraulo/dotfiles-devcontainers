@@ -37,3 +37,7 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+if command -v starship > /dev/null ; then
+  eval "$(starship init zsh)"
+fi
