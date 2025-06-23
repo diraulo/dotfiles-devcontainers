@@ -1,11 +1,12 @@
 [tools]
 bat = "latest"
-lsd = "latest"
-fzf = "latest"
-fd = "latest"
 chezmoi = "latest"
-ripgrep = "latest"
-usage = "latest" #  required for mise completion
+direnv = "latest"
+fd = "latest"
+fzf = "latest"
+lsd = "latest"
 neovim = "latest"
 node = "latest"
+ripgrep = "latest"
 starship = "latest"
+usage = "latest" #  required for mise completion
