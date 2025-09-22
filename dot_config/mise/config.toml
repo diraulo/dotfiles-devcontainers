@@ -9,4 +9,5 @@ neovim = "latest"
 node = "latest"
 ripgrep = "latest"
 starship = "latest"
-usage = "latest" #  required for mise completion
+usage = "latest"    #  required for mise completion
+go = "latest"

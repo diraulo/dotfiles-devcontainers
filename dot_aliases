@@ -24,3 +24,6 @@ if command -v lsd > /dev/null ; then
   alias lla="ls -lgha"
   alias lt="ls --tree"
 fi
+
+# nvim
+alias n="nvim"
