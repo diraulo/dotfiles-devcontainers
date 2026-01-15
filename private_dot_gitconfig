@@ -1,9 +1,13 @@
+[pretty]
+  colored = format:%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+
 [alias]
   ap = add -u --patch
   ci = commit -v
   co = checkout
   dc = diff --cached
   di = diff
+  lg  = log --oneline --decorate --graph --all --pretty=colored
   pf = push --force-with-lease
   st = status
 
