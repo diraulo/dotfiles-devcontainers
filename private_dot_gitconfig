@@ -1,0 +1,11 @@
+[alias]
+  ap = add -u --patch
+  ci = commit -v
+  co = checkout
+  dc = diff --cached
+  di = diff
+  pf = push --force-with-lease
+  st = status
+
+[commit]
+	gpgsign = true
