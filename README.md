@@ -52,10 +52,13 @@ is part of `init --apply` — there is no separate "install tools" step.
 ### How tools end up on `PATH`
 
 mise is installed as `~/.local/bin/mise` (see
-[`.chezmoiexternals/mise.toml`](.chezmoiexternals/mise.toml)), and
-[`dot_zsh/configs/post/path.zsh`](dot_zsh/configs/post/path.zsh) wires the mise shims
-onto `PATH`. If a tool isn't found after the first login, run `mise reshim` and start
-a fresh shell with `exec zsh -l`.
+[`.chezmoiexternals/mise.toml`](.chezmoiexternals/mise.toml)).
+[`dot_zsh/configs/post/path.zsh`](dot_zsh/configs/post/path.zsh) adds `~/.local/bin`
+to `PATH` and runs `mise activate zsh`, which puts the mise-managed tools (`fd`,
+`bat`, `starship`, `nvim`, ...) on `PATH`. The activation is keyed off the
+`~/.local/bin/mise` binary existing rather than `mise` already being on `PATH` —
+otherwise it would never activate on a fresh host. If a tool still isn't found,
+run `~/.local/bin/mise reshim` and start a fresh shell with `exec zsh -l`.
 
 ## Repository layout (chezmoi conventions)
 
