@@ -2,6 +2,25 @@
 
 set -euo pipefail
 
+# install zsh if it isn't already available (fresh servers often lack it,
+# devcontainers usually ship with it)
+if ! command -v zsh > /dev/null ; then
+  if command -v apt-get > /dev/null ; then
+    sudo apt-get update && sudo apt-get install -y zsh
+  elif command -v dnf > /dev/null ; then
+    sudo dnf install -y zsh
+  elif command -v pacman > /dev/null ; then
+    sudo pacman -S --noconfirm zsh
+  elif command -v zypper > /dev/null ; then
+    sudo zypper install -y zsh
+  elif command -v apk > /dev/null ; then
+    sudo apk add zsh
+  else
+    echo "Could not find a supported package manager to install zsh. Install it manually and re-run." >&2
+    exit 1
+  fi
+fi
+
 # use zsh as default shell
 if command -v zsh > /dev/null ; then
   sudo chsh -s $(command -v zsh) $USER
