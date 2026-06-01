@@ -13,6 +13,14 @@ fi;
 # which causes a conflict.
 compdef -d mcd
 
+# fzf and mise live under mise, which isn't on PATH until it's activated.
+# post/ configs load alphabetically, so this file runs *before* path.zsh does
+# that activation — activate here too (idempotent; mise's activate runs its hook
+# immediately, putting the tools on PATH) so the completions below can load.
+if ! command -v mise > /dev/null && [ -x "$HOME/.local/bin/mise" ]; then
+  eval "$("$HOME/.local/bin/mise" activate zsh)"
+fi
+
 # enable fzf completion if installed
 if command -v fzf > /dev/null ; then
   source <(fzf --zsh)
