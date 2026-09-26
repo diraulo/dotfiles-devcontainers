@@ -1,5 +1,6 @@
 [tools]
 bat = "latest"
+btop = "latest"
 chezmoi = "latest"
 direnv = "latest"
 fd = "latest"
@@ -13,3 +14,4 @@ usage = "latest"    #  required for mise completion
 go = "latest"
 gh = "latest"
 herdr = "latest"   # agent-aware terminal multiplexer (devbox sessions)
+claude = "latest"
