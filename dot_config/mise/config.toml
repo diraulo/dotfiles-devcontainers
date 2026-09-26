@@ -11,3 +11,4 @@ ripgrep = "latest"
 starship = "latest"
 usage = "latest"    #  required for mise completion
 go = "latest"
+herdr = "latest"   # agent-aware terminal multiplexer (devbox sessions)
